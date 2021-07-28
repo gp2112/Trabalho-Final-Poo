@@ -12,8 +12,8 @@
             <div id="main-content">
 				<h2>Contato</h2>
 
-                <p>Geral: allpet@allpet.com.br</p>
-                <p>Denúncia: denuncia@allpet.com.br</p>
+                <p class="texto">Geral: allpet@allpet.com.br</p>
+                <p class="texto">Denúncia: denuncia@allpet.com.br</p>
 			</div>
 		</main>
 	</body>

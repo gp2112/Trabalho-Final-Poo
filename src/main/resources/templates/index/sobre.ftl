@@ -12,8 +12,8 @@
             <div id="main-content">
 				<h2>Sobre</h2>
 
-                <p>Somos uma equipe que se preocupa com a adoção de animais domésticos, visto que, por conta da pandemia, aumentaram os casos de abandono.</p>
-                <p>Por meio dos anúncios deste portal, o usuário consegue encontrar animais precisando de um dono. Além disso, caso queira, o usuário pode se cadastrar e anunciar.</p>
+                <p class="texto">Somos uma equipe que se preocupa com a adoção de animais domésticos, visto que, por conta da pandemia, aumentaram os casos de abandono.</p>
+                <p class="texto">Por meio dos anúncios deste portal, o usuário consegue encontrar animais precisando de um dono. Além disso, caso queira, o usuário pode se cadastrar e anunciar.</p>
 			</div>
 		</main>
 	</body>
