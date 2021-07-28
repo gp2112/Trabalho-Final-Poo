@@ -15,16 +15,18 @@ public class AnuncioViewModel {
 
     public AnuncioViewModel() {}
     
+    //Adiciona um anúncio
     public AnuncioViewModel(Anuncio anuncio) {
         params.put("anuncio", anuncio);
     }
-    
+
+    //Adiciona uma lista de anúncios e a lista de string do enum animais
     public AnuncioViewModel(List<Anuncio> anuncios) {
         params.put("anuncios", anuncios);
         params.put("animais", Animal.getAnimaisString());
     }
-    
-    //Percorre o array de animais (Enum de Animal.java) e guarda na List como string
+
+    //Adiciona um usuário e a lista de string do enum animais
     public AnuncioViewModel(Usuario usuario) {
     	List<String> strings_animais = Animal.getAnimaisString();
 		params.put("animais", strings_animais);

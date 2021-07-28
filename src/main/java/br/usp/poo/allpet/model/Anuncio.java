@@ -48,13 +48,16 @@ public class Anuncio {
 	@Column(nullable = false)
 	private Short usuario;
 	
+	//Salva a imagem como um array de bytes
 	@Column(columnDefinition = "MEDIUMBLOB", nullable=false)
 	private byte[] bytes;
 	
-	
+	//Para obter a imagem em si usa-se esse método que decodifica os bytes e retorna uma string em base64
 	public String getImagem() {
+		//Obtém a string da imagem apos decodificar para base64
         byte[] imgBytes = Base64.getEncoder().encode (this.getBytes());
         String img = new String (imgBytes);
+        //Salva como string e adiciona o cabeçalho necessário para reconhecer que essa string é arquivo
 		img = "data:image/png;base64," + img;
 		
 		return img;

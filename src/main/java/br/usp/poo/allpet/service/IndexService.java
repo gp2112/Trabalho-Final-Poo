@@ -12,8 +12,10 @@ public class IndexService {
 
 	@Autowired
 	private AnuncioRepository anuncioRepository;
-
+	
+	//Página de ínicio
 	public IndexViewModel getIndexViewModel() {
+		//Passa também os anúncios pelo ViewModel
 		return new IndexViewModel(anuncioRepository.findAll(Sort.by(Sort.Direction.DESC, "id")));
 	}
 	

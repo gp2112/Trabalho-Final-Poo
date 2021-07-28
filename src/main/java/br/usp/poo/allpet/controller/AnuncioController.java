@@ -52,7 +52,7 @@ public class AnuncioController {
         
         boolean resultado = anuncioService.cadastrar(titulo, user_mail, cidade, endereco, descricao, telefone, animal, email, foto);
         
-        //se deu algum erro ao criar o anuncio o usuário é redirecionado para a página de cadastro de anúncios novamente
+        //Se deu algum erro ao criar o anuncio o usuário é redirecionado para a página de cadastro de anúncios novamente
         if(resultado == false)
         	return new ModelAndView("redirect:/anuncio/criar?sucesso=false&retorno=Campo+nulo");
         
@@ -79,10 +79,13 @@ public class AnuncioController {
     	return new ModelAndView("redirect:/perfil?" + str);
     }
     
+    //Trata a exceção de tamanho maximo atingido do arquivo da foto, que ocorre no criar (post)
     @ExceptionHandler(MaxUploadSizeExceededException.class)
     public ModelAndView handleMaxSizeException(
       MaxUploadSizeExceededException exc) {
- 
+    	
+    	//redireciona para a página de criação com
+    	//adiciona na url o retorno que a operação foi mal-sucedida e o arquivo é muito grande
         return new ModelAndView("redirect:/anuncio/criar?sucesso=false&retorno=arquivo+grande+de+mais");
     }
 

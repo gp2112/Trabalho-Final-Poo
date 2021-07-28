@@ -46,6 +46,7 @@ public class UsuarioController {
         );
          if (r)
              return new ModelAndView("redirect:/login?sucesso=true&retorno=Usuario+cadastrado+com+sucesso!");
+         //caso o usuario já exista não é possível cadastrar, logo retorna sucesso=false na url
         return new ModelAndView("redirect:/login?sucesso=false&retorno=Usuario+ja+existe!");
     }
 

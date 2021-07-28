@@ -12,6 +12,7 @@ public class UsuarioViewModel extends ViewModel{
 
 	private Map<String, Object> params = new HashMap<>();
 
+    //Adiciona parâmetros de retorno
 	public UsuarioViewModel(Boolean success, String retorno) {
 		if (success!=null) {
 			params.put("sucesso", success);
@@ -19,10 +20,12 @@ public class UsuarioViewModel extends ViewModel{
 		}
 	}
 
+    //Adiciona um usuário
 	public UsuarioViewModel(Usuario usuario) {
 		params.put("usuario", usuario);
 	}
-	
+
+    //Adiciona um usuário e seus anúncios
 	public UsuarioViewModel(Usuario usuario, List<Anuncio> anuncios) {
 		params.put("usuario", usuario);
 		params.put("anuncios", anuncios);
