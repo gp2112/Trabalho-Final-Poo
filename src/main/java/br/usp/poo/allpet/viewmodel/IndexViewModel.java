@@ -11,7 +11,8 @@ import br.usp.poo.allpet.security.AuthUser;
 public class IndexViewModel extends ViewModel {
 
 	private Map<String, Object> params = new HashMap<>();
-		
+
+    //Adiciona uma lista de anúncios	
 	public IndexViewModel(List<Anuncio> anuncios) {
 		params.put("anuncios", anuncios);
 		params.put("animais", Animal.getAnimaisString());

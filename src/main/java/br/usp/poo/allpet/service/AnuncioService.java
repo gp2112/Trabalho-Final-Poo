@@ -23,14 +23,17 @@ public class AnuncioService {
     
     @Autowired
     private UsuarioRepository usuarioRepository;
-
+    
+    //Página de criação de anúncio
     public ModelAndView getCriarPage() {
         String email = AuthUser.getEmail();
         Usuario usuario = usuarioRepository.findByEmail(email);
         AnuncioViewModel avm = new AnuncioViewModel(usuario);
+        //Passa o úsuario para o ModelAndView também
         return new ModelAndView("anuncio/criar", avm.getParams());
     }
 
+    //Página de anúncio singular
     public AnuncioViewModel getAnuncio(int id) {
     	if (anuncioRepository.existsById(id))
     		return new AnuncioViewModel(anuncioRepository.getById(id));
@@ -55,6 +58,7 @@ public class AnuncioService {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		//Pega os bytes do arquivo da foto passado
 		
 		
         Anuncio newAnuncio = new Anuncio(null, titulo, descricao, endereco, cidade, telefone, email, animal, usuario.getId(), bytes);

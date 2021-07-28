@@ -27,13 +27,16 @@ public class UsuarioService {
     //Adiciona um novo usuário no banco de dados
     public Boolean addUser(String nome, String email, String senha, String cpf, String cidade, String telefone) {
         boolean isInDb = checkUserInDb(email);
+        //Verifica se o usuário já está no banco de dados
         if (isInDb)
             return false;
+        //Adiciona no repositório
         Usuario user = new Usuario(null,  nome, cidade, cpf, telefone, email, new BCryptPasswordEncoder().encode(senha));
         usuarioRepository.save(user);
         return true;
     }
 
+    //Alterar as credenciais do usuário
     public ModelAndView updateUser(Usuario usuario) {
         if (usuario.getCidade().length() == 0 || usuario.getNome().length() == 0 ||
                 usuario.getCpf().length() == 0 || usuario.getTelefone().length() == 0 ||

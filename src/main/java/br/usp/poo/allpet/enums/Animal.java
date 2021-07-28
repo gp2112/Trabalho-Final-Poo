@@ -6,8 +6,9 @@ import java.util.List;
 public enum Animal {
 	CACHORRO, GATO;
 	
-    public static List<String> getAnimaisString()
-    {
+    public static List<String> getAnimaisString() {
+    	//Método para obter a lista com as strings dos nomes dentro do enum
+    	//Importante para o front-end
     	List<String> strings_animais = new ArrayList<>();
     	for(Animal a : Animal.values()) {
     		strings_animais.add(a.name());
